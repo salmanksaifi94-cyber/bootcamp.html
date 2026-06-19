@@ -1,0 +1,58 @@
+<!-- //promise in js
+
+// a promise is an object that may prdouce a single value some time in the future either a resolved value or a reason that its not resolved
+
+// promise hase 3 state 
+// 1 = resolve  = 
+// 2 = fulfilled . -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>this is my first website</h1>
+</body>
+</html>
+<script>
+//     // 1 = create a new promise
+
+//     var promise = new promise((resolve,reject)=>{
+//     return reject('promsie hase resolved')
+// });
+// console.log(promise);
+
+// //2 = Read values from promise
+
+// promise.then((res)=>{
+//     console.log(res);
+    
+// }) .catch((rej)=>{
+//     console.log(rej);
+    
+// })
+
+
+ var count =0;
+ var promise = new promise((resolve,rejected)=>{
+    if(count> 0){
+        return resolve('positive count')
+         
+        }else{
+            return('negative count')
+        }
+ })
+promise.then((res)=>{
+    console.log('resolve state',resolve);
+    
+}).catch(()=>{
+    console.log('rejected state',rejected);
+    
+})
+
+
+</script>
+

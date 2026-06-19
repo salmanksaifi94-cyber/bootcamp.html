@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+</head>
+<body>
+
+  <h2>Enter OTP</h2>
+
+  <input type="text" id="otpInput" placeholder="Enter OTP">
+  <button id="submitBtn">Submit</button>
+
+  <p id="result"></p>
+
+ 
+
+</body>
+</html>
+<script>
+    const otpInput = document.getElementById("otpInput");
+const submitBtn = document.getElementById("submitBtn");
+const result = document.getElementById("result");
+
+submitBtn.addEventListener("click", () => {
+  const enteredOTP = otpInput.value;
+
+  const otpPromise = new Promise((resolve, reject) => {
+    if (enteredOTP === "1234") {
+      resolve("OTP verified successfully");
+    } else {
+      reject("Invalid OTP");
+    }
+  });
+
+  otpPromise
+    .then((message) => {
+      result.textContent = message;
+      result.style.color = "green";
+    })
+    .catch((error) => {
+      result.textContent = error;
+      result.style.color = "red";
+    });
+});
+</script>
